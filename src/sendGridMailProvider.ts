@@ -4,7 +4,7 @@ import {define, init, singleton, inject} from "@appolo/inject";
 import {IMailOptions, IOptions} from "./IOptions";
 import {IEnv} from "../config/env/IEnv";
 import {ILogger} from "@appolo/logger";
-import {Objects} from "@appolo/utils";
+import {Arrays} from "@appolo/utils";
 import sendgrid = require('@sendgrid/mail');
 
 
@@ -28,10 +28,9 @@ export class SendGridMailProvider implements IMailProvider {
     public async send({from, fromName, to, subject, body, attachments = [], bcc = []}: IMailOptions) {
 
         try {
-            let tos = Objects.compact(Array.isArray(to) ? to : [to]),
-                bccs = Objects.compact(Array.isArray(bcc) ? bcc : [bcc]),
-                attachmentsDto = Objects.compact(Array.isArray(attachments) ? attachments : [attachments]);
-
+            let tos = Arrays.compact(Array.isArray(to) ? to : [to]),
+                bccs = Arrays.compact(Array.isArray(bcc) ? bcc : [bcc]),
+                attachmentsDto = Arrays.compact(Array.isArray(attachments) ? attachments : [attachments]);
 
 
             let msg = <any>{
@@ -46,7 +45,7 @@ export class SendGridMailProvider implements IMailProvider {
             if (attachmentsDto && attachmentsDto.length) {
                 msg.attachments = [];
 
-                attachmentsDto.forEach(attachments, attachment => {
+                attachmentsDto.forEach( attachment => {
                     msg.attachments.push({
                         content: attachment.content,
                         filename: attachment.fileName,

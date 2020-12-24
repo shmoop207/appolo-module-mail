@@ -1,9 +1,11 @@
 {
   "name": "@appolo/mail",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "",
   "private": false,
-  "keywords": ["appolo"],
+  "keywords": [
+    "appolo"
+  ],
   "main": "index.js",
   "publishConfig": {
     "access": "public"
@@ -32,7 +34,7 @@
   },
   "author": {
     "name": "Roman Svichar",
-    "email" : "roman.svichar@gmail.com"
+    "email": "roman.svichar@gmail.com"
   },
   "license": "MIT"
 }

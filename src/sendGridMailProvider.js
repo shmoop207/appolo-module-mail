@@ -12,7 +12,7 @@ let SendGridMailProvider = class SendGridMailProvider {
     }
     async send({ from, fromName, to, subject, body, attachments = [], bcc = [] }) {
         try {
-            let tos = utils_1.Objects.compact(Array.isArray(to) ? to : [to]), bccs = utils_1.Objects.compact(Array.isArray(bcc) ? bcc : [bcc]), attachmentsDto = utils_1.Objects.compact(Array.isArray(attachments) ? attachments : [attachments]);
+            let tos = utils_1.Arrays.compact(Array.isArray(to) ? to : [to]), bccs = utils_1.Arrays.compact(Array.isArray(bcc) ? bcc : [bcc]), attachmentsDto = utils_1.Arrays.compact(Array.isArray(attachments) ? attachments : [attachments]);
             let msg = {
                 to: tos,
                 bcc: bccs,
@@ -22,7 +22,7 @@ let SendGridMailProvider = class SendGridMailProvider {
             };
             if (attachmentsDto && attachmentsDto.length) {
                 msg.attachments = [];
-                attachmentsDto.forEach(attachments, attachment => {
+                attachmentsDto.forEach(attachment => {
                     msg.attachments.push({
                         content: attachment.content,
                         filename: attachment.fileName,
