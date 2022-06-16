@@ -25,7 +25,7 @@ export class SendGridMailProvider implements IMailProvider {
         sendgrid.setApiKey(this._apiKey);
     }
 
-    public async send({from, fromName, to, subject, body, attachments = [], bcc = []}: IMailOptions) {
+    public async send({from, fromName, to, subject, body, attachments = [], bcc = [], sendMultiple = true}: IMailOptions) {
 
         try {
             let tos = Arrays.compact(Array.isArray(to) ? to : [to]),
@@ -54,8 +54,11 @@ export class SendGridMailProvider implements IMailProvider {
                 });
             }
 
-
-            await sendgrid.sendMultiple(msg);
+            if (sendMultiple) {
+                await sendgrid.sendMultiple(msg);
+            } else {
+                await sendgrid.send(msg);
+            }
 
 
         } catch (e) {

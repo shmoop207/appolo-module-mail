@@ -18,5 +18,6 @@ export interface IMailOptions {
     subject: string;
     body: string;
     bcc?: string | string[];
-    attachments?: MailAttachment | MailAttachment[]
+    attachments?: MailAttachment | MailAttachment[];
+    sendMultiple?: boolean;
 }

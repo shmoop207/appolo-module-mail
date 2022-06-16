@@ -10,7 +10,7 @@ let SendGridMailProvider = class SendGridMailProvider {
         this._apiKey = this.moduleOptions.apiKey || this.env.mailSenderApiKey;
         sendgrid.setApiKey(this._apiKey);
     }
-    async send({ from, fromName, to, subject, body, attachments = [], bcc = [] }) {
+    async send({ from, fromName, to, subject, body, attachments = [], bcc = [], sendMultiple = true }) {
         try {
             let tos = utils_1.Arrays.compact(Array.isArray(to) ? to : [to]), bccs = utils_1.Arrays.compact(Array.isArray(bcc) ? bcc : [bcc]), attachmentsDto = utils_1.Arrays.compact(Array.isArray(attachments) ? attachments : [attachments]);
             let msg = {
@@ -30,7 +30,12 @@ let SendGridMailProvider = class SendGridMailProvider {
                     });
                 });
             }
-            await sendgrid.sendMultiple(msg);
+            if (sendMultiple) {
+                await sendgrid.sendMultiple(msg);
+            }
+            else {
+                await sendgrid.send(msg);
+            }
         }
         catch (e) {
             this.logger.error("failed to mail", { from, to, subject, e: e });
