@@ -9,12 +9,12 @@ let MailProvider = class MailProvider {
     }
 };
 tslib_1.__decorate([
-    inject_1.inject()
+    (0, inject_1.inject)()
 ], MailProvider.prototype, "sendGridMailProvider", void 0);
 MailProvider = tslib_1.__decorate([
-    inject_1.define(),
-    inject_1.singleton(),
-    inject_1.factory()
+    (0, inject_1.define)(),
+    (0, inject_1.singleton)(),
+    (0, inject_1.factory)()
 ], MailProvider);
 exports.MailProvider = MailProvider;
 //# sourceMappingURL=mailProvider.js.map

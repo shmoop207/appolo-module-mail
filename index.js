@@ -20,7 +20,7 @@ let MailModule = MailModule_1 = class MailModule extends engine_1.Module {
     }
 };
 MailModule = MailModule_1 = tslib_1.__decorate([
-    engine_1.module()
+    (0, engine_1.module)()
 ], MailModule);
 exports.MailModule = MailModule;
 //# sourceMappingURL=index.js.map

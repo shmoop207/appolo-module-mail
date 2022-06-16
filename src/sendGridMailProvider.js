@@ -10,12 +10,13 @@ let SendGridMailProvider = class SendGridMailProvider {
         this._apiKey = this.moduleOptions.apiKey || this.env.mailSenderApiKey;
         sendgrid.setApiKey(this._apiKey);
     }
-    async send({ from, fromName, to, subject, body, attachments = [], bcc = [], sendMultiple = true }) {
+    async send({ from, fromName, to, subject, body, attachments = [], bcc = [], cc = [], sendMultiple = true }) {
         try {
-            let tos = utils_1.Arrays.compact(Array.isArray(to) ? to : [to]), bccs = utils_1.Arrays.compact(Array.isArray(bcc) ? bcc : [bcc]), attachmentsDto = utils_1.Arrays.compact(Array.isArray(attachments) ? attachments : [attachments]);
+            let tos = utils_1.Arrays.compact(Array.isArray(to) ? to : [to]), bccs = utils_1.Arrays.compact(Array.isArray(bcc) ? bcc : [bcc]), ccs = utils_1.Arrays.compact(Array.isArray(cc) ? cc : [cc]), attachmentsDto = utils_1.Arrays.compact(Array.isArray(attachments) ? attachments : [attachments]);
             let msg = {
                 to: tos,
                 bcc: bccs,
+                cc: ccs,
                 from: { name: fromName, email: from },
                 subject: subject,
                 html: body,
@@ -44,20 +45,20 @@ let SendGridMailProvider = class SendGridMailProvider {
     }
 };
 tslib_1.__decorate([
-    inject_1.inject()
+    (0, inject_1.inject)()
 ], SendGridMailProvider.prototype, "moduleOptions", void 0);
 tslib_1.__decorate([
-    inject_1.inject()
+    (0, inject_1.inject)()
 ], SendGridMailProvider.prototype, "env", void 0);
 tslib_1.__decorate([
-    inject_1.inject()
+    (0, inject_1.inject)()
 ], SendGridMailProvider.prototype, "logger", void 0);
 tslib_1.__decorate([
-    inject_1.init()
+    (0, inject_1.init)()
 ], SendGridMailProvider.prototype, "initialize", null);
 SendGridMailProvider = tslib_1.__decorate([
-    inject_1.define(),
-    inject_1.singleton()
+    (0, inject_1.define)(),
+    (0, inject_1.singleton)()
 ], SendGridMailProvider);
 exports.SendGridMailProvider = SendGridMailProvider;
 //# sourceMappingURL=sendGridMailProvider.js.map
