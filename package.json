@@ -1,6 +1,6 @@
 {
   "name": "@appolo/mail",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "description": "",
   "private": false,
   "keywords": [
@@ -11,22 +11,22 @@
     "access": "public"
   },
   "dependencies": {
-    "@appolo/engine": "^8.0.19",
-    "@appolo/logger": "^8.0.4",
-    "@appolo/utils": "^8.0.7",
-    "@sendgrid/mail": "^7.4.0"
+    "@appolo/engine": "^8.0.23",
+    "@appolo/logger": "^8.0.6",
+    "@appolo/utils": "^8.0.38",
+    "@sendgrid/mail": "^7.7.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.14",
-    "@types/mocha": "^8.2.0",
-    "@types/node": "^14.14.14",
-    "@types/sinon": "^9.0.9",
-    "@types/sinon-chai": "^3.2.5",
-    "chai": "^4.2.0",
-    "mocha": "^8.2.1",
-    "sinon": "^9.2.2",
-    "sinon-chai": "^3.5.0",
-    "typescript": "^4.1.3"
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.0.0",
+    "@types/sinon": "^10.0.11",
+    "@types/sinon-chai": "^3.2.8",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "sinon": "^14.0.0",
+    "sinon-chai": "^3.7.0",
+    "typescript": "^4.7.3"
   },
   "repository": {
     "type": "git",
