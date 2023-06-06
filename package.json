@@ -11,7 +11,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@appolo/engine": "^8.0.23",
+    "@appolo/engine": "^8.0.25",
     "@appolo/logger": "^8.0.6",
     "@appolo/utils": "^8.0.38",
     "@sendgrid/mail": "^7.7.0"
