@@ -14,7 +14,7 @@
     "@appolo/engine": "^8.0.23",
     "@appolo/logger": "^8.0.6",
     "@appolo/utils": "^8.0.38",
-    "@sendgrid/mail": "^7.7.0"
+    "@sendgrid/mail": "^8.0.0"
   },
   "devDependencies": {
     "@types/chai": "^4.3.1",
